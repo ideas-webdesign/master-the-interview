@@ -1,1 +1,52 @@
+// build class array by myself
+// in JS, arrays are just objects with with integer based keys
+class MyArray {
+  constructor() {
+    this.length = 0
+    this.data = {};
+  }
 
+  get(index) {
+    return this.data[index]
+  }
+
+  // adiciona o item à data do primeiro elemento
+  // incrementa o length para este assumir novo tamanho
+  push(item) {
+    this.data[this.length] = item;
+    this.length++
+    return this.length
+  }
+
+  // in JS methods are functions
+  pop() {
+    const lastItem = this.data[this.length-1]
+    delete this.data[this.length-1]
+    this.length--
+    return lastItem
+  }
+
+  delete(index) {
+    const lastItem = this.data[index]
+    this.shiftItems(index);
+    return lastItem
+  }
+
+  shiftItems(index) {
+    for(let i = index; i < this.length -1; i++) 
+    {
+      this.data[i] = this.data[i+1];
+    }
+    delete this.data[this.length-1]
+    this.length--
+  }
+}
+
+const newArray = new MyArray();
+newArray.push('hi')
+newArray.push('how')
+newArray.push('are')
+newArray.push('you')
+//newArray.pop() // remove lastItem
+newArray.delete(1);
+console.log(newArray);
