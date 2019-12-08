@@ -1,0 +1,30 @@
+// array
+// lookup 0(1)
+// push 0(1) add at the end
+// insert 0(n)
+// delete 0(n)
+
+const strings = ['a','b','c','d'];
+// space in memory 4x4 = 16 bytes of storage
+// save data ordered
+
+// push - add at the end //0(1)
+strings.push('e');
+
+// pop - remove the last item //0(1)
+strings.pop();
+strings.pop();
+
+// add at the beginning of the array
+// unshift - shift all numbers of the array, because 'x' takes the index - 0(n)
+strings.unshift('x');
+
+// use the method of splice - add at the middle
+// strings.splice(start: number, deleteCount?: number): string[]
+// before splice ['x','a','b','c','d'];
+//                 0   1   2   3   4
+// after  splice ['x','a','alien','b','c','d'];
+//                 0   1     2     3   4   5
+strings.splice(2, 0, 'alien'); // 0(n/2), worst case 0(n)
+
+console.log(strings);
