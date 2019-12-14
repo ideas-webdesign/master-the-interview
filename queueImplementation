@@ -1,0 +1,69 @@
+// Stacks and Queues - Linear Data Structure
+// Transverse data one by one
+// Have a lot of methods to access on data
+// Stacks LIFO VS Queues FIFO
+// Stacks lookup O(n) | pop O(1) | push O(1) | peek O(1) (Main Methods)
+// Queues lookup O(n) | enqueue O(1) | dequeue O(1) | peek O(1)
+
+// Queues (ex: printer list, selling tickets)
+// Arrays or Linked Lists
+
+// Matt -- Joy -- Samir - Pavel
+
+// Queues implementation
+class Node {
+  constructor(value) {
+    this.value = value
+    this.next = null
+  }
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.length = 0
+  }
+
+  peek() {
+    return this.first;
+  }
+
+  // add to the queue
+  enqueue(value) {
+    const newNode = new Node(value)
+    if(this.length === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode
+      this.last = newNode
+    }
+    this.length++
+    return this;
+  }
+
+  // remove from the queue 
+  dequeue() {
+    if(!this.first) {
+      return null
+    } 
+    if(this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next
+    this.length--
+    return this;
+  }
+}
+
+const myQueue = new Queue();
+myQueue.peek();
+myQueue.enqueue('Joy')
+myQueue.enqueue('Matt')
+myQueue.enqueue('Pavel')
+myQueue.enqueue('Samir')
+myQueue.dequeue()
+myQueue.dequeue()
+myQueue.dequeue()
+myQueue.dequeue()
