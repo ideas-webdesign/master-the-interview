@@ -1,0 +1,15 @@
+function calcFactorial(num) {
+  //var num = 1
+  if(num < 0) {
+    return 'Number must be positive'
+  } if(num === 0 || num === 1) {
+    return 1
+  } else if (num > 1){
+    for (let i = num-1; i > 1; i--) {
+      var fact = num * i
+      //return fact
+    }
+    return fact
+  }
+}
+calcFactorial(4)
