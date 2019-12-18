@@ -1,4 +1,4 @@
-  function calcFactorialForLoop(num) {
+function calcFactorialForLoop(num) {
   //var fact = num
   if(num < 0) {
     return 'Number must be positive'
