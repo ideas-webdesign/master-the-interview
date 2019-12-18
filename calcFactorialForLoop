@@ -1,15 +1,15 @@
-function calcFactorial(num) {
-  //var num = 1
+  function calcFactorialForLoop(num) {
+  //var fact = num
   if(num < 0) {
     return 'Number must be positive'
   } if(num === 0 || num === 1) {
     return 1
   } else if (num > 1){
     for (let i = num-1; i > 1; i--) {
-      var fact = num * i
-      //return fact
+      num = num * i
     }
-    return fact
+    return num
   }
 }
-calcFactorial(4)
+calcFactorial(5)
+// 5! = 5*4*3*2*1 = 120
