@@ -1,0 +1,16 @@
+function calcFactorialWhileLoop(num) {
+  var fact = num
+  if(num < 0) {
+    return 'Number must be positive'
+  } if(num === 0 || num === 1) {
+    return 1
+  } else if (num > 1){
+    while(num > 1) {
+      num--
+      fact = fact * num
+    }
+    return fact
+  }
+}
+calcFactorialWhileLoop(5)
+// 5! = 5*4*3*2*1 = 120
